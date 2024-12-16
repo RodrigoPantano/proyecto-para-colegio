@@ -1,0 +1,134 @@
+import React, { useState } from 'react';
+import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
+
+const Sabado = () => {
+    const [openIndex, setOpenIndex] = useState(null);
+
+    const toggleCaja = (index) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
+
+    const cajas = [
+        {
+            id: 1, title: '1er misterio', content: `<p>
+                    U: Contemplamos los misterios gozosos. En el primer misterio gozoso contemplamos La Anunciación del Ángel a María y la Encarnación del Hijo de Dios. <br /> <br />
+                    U: Padre nuestro que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hagase tu voluntad en la tierra como en
+                    el cielo. <br />
+                    T: Danos hoy el pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer
+                    en la tentación, y libranos del mal. Amén. <br /> 
+                    <br />
+                    U: Dios te salve, María; llena eres de gracia; el Señor es contigo; bendita Tú eres entre todas las mujeres, y bendito es el fruto
+                    de tu vientre, Jesús. <br />
+                    T: Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén. <br />
+                    (Diez veces) <br />
+                    <br />
+                    U: Gloria al Padre, al Hijo y al Espíritu Santo. <br />
+                    T: Como era en el principio, ahora y siempre, y por los siglos de los siglos. Amén. <br /> <br />
+                    ¡Oh! Jesús mío, perdona nuestras culpas, líbranos del fuego del infierno, lleva al cielo todas las almas, socorre especialmente a las
+                    más necesitadas de Tu misericordia. Amén. <br />
+                </p>` },
+        {
+            id: 2, title: '2do misterio', content: `<p>
+                    U: En el segundo misterio gozoso contemplamos La Visitación de la Virgen María a su prima Santa Isabel.<br /> <br />
+                    U: Padre nuestro que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hagase tu voluntad en la tierra como en
+                    el cielo. <br />
+                    T: Danos hoy el pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer
+                    en la tentación, y libranos del mal. Amén. <br /> 
+                    <br />
+                    U: Dios te salve, María; llena eres de gracia; el Señor es contigo; bendita Tú eres entre todas las mujeres, y bendito es el fruto
+                    de tu vientre, Jesús. <br />
+                    T: Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén. <br />
+                    (Diez veces) <br />
+                    <br />
+                    U: Gloria al Padre, al Hijo y al Espíritu Santo. <br />
+                    T: Como era en el principio, ahora y siempre, y por los siglos de los siglos. Amén. <br /> <br />
+                    ¡Oh! Jesús mío, perdona nuestras culpas, líbranos del fuego del infierno, lleva al cielo todas las almas, socorre especialmente a las
+                    más necesitadas de Tu misericordia. Amén. <br />
+                </p>` },
+        {
+            id: 3, title: '3er misterio', content: `<p>
+                    U: En el tercer misterio gozoso contemplamos El Nacimiento del Hijo de Dios en el portal de Belén. <br /> <br />
+                    U: Padre nuestro que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hagase tu voluntad en la tierra como en
+                    el cielo. <br />
+                    T: Danos hoy el pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer
+                    en la tentación, y libranos del mal. Amén. <br />
+                    <br />
+                    U: Dios te salve, María; llena eres de gracia; el Señor es contigo; bendita Tú eres entre todas las mujeres, y bendito es el fruto
+                    de tu vientre, Jesús. <br />
+                    T: Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén. <br />
+                    (Diez veces) <br />
+                    <br />
+                    U: Gloria al Padre, al Hijo y al Espíritu Santo. <br />
+                    T: Como era en el principio, ahora y siempre, y por los siglos de los siglos. Amén. <br /> <br />
+                    ¡Oh! Jesús mío, perdona nuestras culpas, líbranos del fuego del infierno, lleva al cielo todas las almas, socorre especialmente a las
+                    más necesitadas de Tu misericordia. Amén. <br />
+                </p>` },
+        {
+            id: 4, title: '4to misterio', content: `<p>
+                    U: En el cuarto misterio gozoso contemplamos La Presentación de Jesús en el Templo y la Purificación de la Virgen María. <br /> <br />
+                    U: Padre nuestro que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hagase tu voluntad en la tierra como en
+                    el cielo. <br />
+                    T: Danos hoy el pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer
+                    en la tentación, y libranos del mal. Amén. <br />
+                    <br />
+                    U: Dios te salve, María; llena eres de gracia; el Señor es contigo; bendita Tú eres entre todas las mujeres, y bendito es el fruto
+                    de tu vientre, Jesús. <br />
+                    T: Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén. <br />
+                    (Diez veces) <br />
+                    <br />
+                    U: Gloria al Padre, al Hijo y al Espíritu Santo. <br />
+                    T: Como era en el principio, ahora y siempre, y por los siglos de los siglos. Amén. <br /> <br />
+                    ¡Oh! Jesús mío, perdona nuestras culpas, líbranos del fuego del infierno, lleva al cielo todas las almas, socorre especialmente a las
+                    más necesitadas de Tu misericordia. Amén. <br />
+                </p>` },
+        {
+            id: 5, title: '5to misterio', content: `<p>
+                    U: En el quinto misterio gozoso contemplamos El Niño Jesús perdido y hallado en el Templo. <br /> <br />
+                    U: Padre nuestro que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hagase tu voluntad en la tierra como en
+                    el cielo. <br />
+                    T: Danos hoy el pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer
+                    en la tentación, y libranos del mal. Amén. <br /> 
+                    <br />
+                    U: Dios te salve, María; llena eres de gracia; el Señor es contigo; bendita Tú eres entre todas las mujeres, y bendito es el fruto
+                    de tu vientre, Jesús. <br />
+                    T: Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén. <br />
+                    (Diez veces) <br />
+                    <br />
+                    U: Gloria al Padre, al Hijo y al Espíritu Santo. <br />
+                    T: Como era en el principio, ahora y siempre, y por los siglos de los siglos. Amén. <br /> <br />
+                    ¡Oh! Jesús mío, perdona nuestras culpas, líbranos del fuego del infierno, lleva al cielo todas las almas, socorre especialmente a las
+                    más necesitadas de Tu misericordia. Amén. <br />
+                </p>` },
+    ];
+
+    return (
+        <>
+            <div className="flex flex-col sm:grid gap-1 sm:gap-4 sm:grid-cols-2 relative">
+                {cajas.map((caja, index) => (
+                    <div key={caja.id} className={` overflow-hidden rounded-xl transition-all duration-500  ${openIndex === index ? 'max-h-screen' : 'max-h-16'}`}>
+                        <div className={`mt-2 p-4 rounded-xl bg-stone-900 relative`}>
+                            <div className="flex  gap-x-2">
+                                <button
+                                    onClick={() => toggleCaja(index)}
+                                    className=" text-white font-bold "
+                                >
+                                    {openIndex === index ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                                </button>
+                                <h2 className="text-lg font-semibold">{caja.title}</h2>
+                            </div>
+
+                            <div
+                                className={`transition-opacity duration-300 ${openIndex === index ? 'opacity-100' : 'opacity-0'}`}
+                                dangerouslySetInnerHTML={{ __html: caja.content }}
+                            />
+                        </div>
+
+                    </div>
+                ))}
+            </div>
+        </>
+    );
+};
+
+export default Sabado;
